@@ -1,7 +1,5 @@
 #include <SDL2/SDL.h>
 #include <cmath>
-
-
 void drawCircle(SDL_Renderer* renderer, int cx, int cy, int radius) {
     for (int i = 0; i < 360; i++) {
         double angle = i * M_PI / 180.0;
