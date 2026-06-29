@@ -4,6 +4,7 @@
 #include <ctime>
 #include <cmath>
 #include <string>
+
 //Screen and Grid Dimensions
 const int SCREEN_WIDTH=800;
 const int SCREEN_HEIGHT=800;
