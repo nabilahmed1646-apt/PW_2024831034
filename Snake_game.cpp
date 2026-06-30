@@ -15,13 +15,13 @@ enum Direction{UP,DOWN,LEFT,RIGHT};
 int main(int argc, char* argv[]){
 // Seed random number generator
 srand(time(0));
-// 1. Initialize SDL2
+//  Initialize SDL2
 SDL_Init(SDL_INIT_VIDEO);
-// 2. Create Window
+//  Create Window
 SDL_Window*window=SDL_CreateWindow("Easy Snake Game|Score:0", // Added initial score to title
 SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,
 SCREEN_WIDTH,SCREEN_HEIGHT,SDL_WINDOW_SHOWN);
-// 3. Create Renderer
+//  Create Renderer
 SDL_Renderer*renderer=SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 // Game variables using simple arrays
 int snakeX[MAX_SNAKE_LENGTH];
@@ -40,7 +40,7 @@ bool running = true;
 bool gameOver = false;
 // MAIN GAME LOOP
 while (running) {
-// A) HANDLE INPUT
+//  HANDLE INPUT
 SDL_Event event;
 while (SDL_PollEvent(&event)) {
 if (event.type == SDL_QUIT) {
@@ -65,7 +65,7 @@ SDL_SetWindowTitle(window, "Easy Snake Game | Score: 0");
 }
 }
 
-// B) UPDATE LOGIC
+//  UPDATE LOGIC
 if (!gameOver) {
 // Shift body segments forward
 for (int i = snakeLength - 1; i > 0; i--) {
@@ -133,7 +133,7 @@ SDL_RenderClear(renderer);
 // 4. Present the rendered frame to the window
 SDL_RenderPresent(renderer);
 // Frame rate delay (Controls game speed - Medium)
-SDL_Delay(50);
+SDL_Delay(150);
 }
 // Clean up resources and close SDL2
 SDL_DestroyRenderer(renderer);
