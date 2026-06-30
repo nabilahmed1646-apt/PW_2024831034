@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     srand(time(0));
     // initialize SDL2
     SDL_Init(SDL_INIT_VIDEO);
-    // 2. Create Window
+    //  Create Window
     SDL_Window *window = SDL_CreateWindow("Easy Snake Game|Score:0", // Added initial score to title
                                           SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                           SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
                 if (event.key.keysym.sym == SDLK_RIGHT && dir != LEFT)
                     dir = RIGHT;
                 if (event.key.keysym.sym == SDLK_r && gameOver)
-                { // Press 'R' to restart
+                { // Press r to restart
                     snakeLength = 3;
                     snakeX[0] = 300;
                     snakeY[0] = 300;
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
                     dir = RIGHT;
                     score = 0; // Reset score on restart
                     gameOver = false;
-                    // Reset Window Title on restart
+                    // Reset Window Title to restart
                     SDL_SetWindowTitle(window, "Easy Snake Game | Score: 0");
                 }
             }
@@ -167,7 +167,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            // Game Over visual:  screen Red
+            // Game Over visual  screen Red
             SDL_SetRenderDrawColor(renderer, 150, 0, 0, 255);
             SDL_RenderClear(renderer);
         }
